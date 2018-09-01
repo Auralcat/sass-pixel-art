@@ -1,0 +1,15 @@
+.icons {
+    list-style: none;
+    padding: 0;
+    margin: 30px;
+
+    li {
+        outline: 1px solid red; // red outline on actual element
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: -20px;
+        left: -20px;
+        box-shadow: 20px 20px 0 hotpink, 40px 40px 0 hotpink, 60px 60px 0 hotpink
+    }
+}
