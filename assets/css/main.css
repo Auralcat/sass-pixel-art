@@ -18,5 +18,17 @@
   /*     left: -20px; */
   /*     box-shadow: 20px 20px 0 hotpink, 40px 40px 0 gainsboro, 60px 60px 0 hotpink */
   /* } */ }
+  .icons--diamond {
+    position: relative;
+    width: 100px;
+    height: 100px; }
+    .icons--diamond:after {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 20px;
+      height: 20px;
+      box-shadow: 20px 20px transparent, 40px 20px transparent, 60px 20px hotpink, 80px 20px transparent, 100px 20px transparent, 20px 40px transparent, 40px 40px hotpink, 60px 40px transparent, 80px 40px hotpink, 100px 40px transparent, 20px 60px hotpink, 40px 60px transparent, 60px 60px transparent, 80px 60px transparent, 100px 60px hotpink, 20px 80px transparent, 40px 80px hotpink, 60px 80px transparent, 80px 80px hotpink, 100px 80px transparent, 20px 100px transparent, 40px 100px transparent, 60px 100px hotpink, 80px 100px transparent, 100px 100px transparent; }
 
 /*# sourceMappingURL=main.css.map */
