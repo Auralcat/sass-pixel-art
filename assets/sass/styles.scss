@@ -1,3 +1,15 @@
+@import "functions.scss";
+
+/* Icon size */
+$icon-size-var: 10px;
+
+/* Pixel matrix we're using */
+$diamond: (o o x o o)
+          (o x o x o)
+          (x o o o x)
+          (o x o x o)
+          (o o x o o);
+
 .icons {
     list-style: none;
     padding: 0;
@@ -11,5 +23,17 @@
         top: -20px;
         left: -20px;
         box-shadow: 20px 20px 0 hotpink, 40px 40px 0 gainsboro, 60px 60px 0 hotpink
+    }
+
+    &--diamond {
+        &:after {
+            content: '';
+            position: absolute;
+            top: -$icon-size-var;
+            left: -$icon-size-var;
+            width: $icon-size-var;
+            height: $icon-size-var;
+            box-shadow: pixelize($diamond);
+        }
     }
 }
