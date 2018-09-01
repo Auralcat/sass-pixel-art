@@ -9,17 +9,18 @@
         $row: nth($matrix, $i); /* Single row */
 
         @for $j from 1 through $l {
-            $item: nth($row, $j)
-        }
-        @if $item == x {
-            $shadows: $shadows + ($j * $size) + ' ' + ($i * $size) + ' ' + $color;
-        } @else {
-            $shadows: $shadows + ($j * $size) + ' ' + ($i * $size) + ' ' + $transparent;
-        }
-        /* When you get to the end of the row, add a comma before the next block
-           of drop shadows */
-        @if not ($j == length($row) and $i == $l) {
-            $shadows: $shadows + ',';
+            $item: nth($row, $j);
+
+            @if $item == 'x' {
+                $shadows: $shadows + ($j * $size) + ' ' + ($i * $size) + ' ' + $color;
+            } @else {
+                $shadows: $shadows + ($j * $size) + ' ' + ($i * $size) + ' ' + transparent;
+            }
+            /* When you get to the end of the row, add a comma before the next block
+            of drop shadows */
+            @if not ($j == length($row) and $i == $l) {
+                $shadows: $shadows + ',';
+            }
         }
     }
     /* Return entire shadow list */

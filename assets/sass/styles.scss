@@ -15,15 +15,17 @@ $diamond: (o o x o o)
     padding: 0;
     margin: 30px;
 
-    li {
-        outline: 1px solid red; // red outline on actual element
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        top: -20px;
-        left: -20px;
-        box-shadow: 20px 20px 0 hotpink, 40px 40px 0 gainsboro, 60px 60px 0 hotpink
-    }
+    /* Small demo below */
+
+    /* li { */
+    /*     outline: 1px solid red; // red outline on actual element */
+    /*     position: absolute; */
+    /*     width: 20px; */
+    /*     height: 20px; */
+    /*     top: -20px; */
+    /*     left: -20px; */
+    /*     box-shadow: 20px 20px 0 hotpink, 40px 40px 0 gainsboro, 60px 60px 0 hotpink */
+    /* } */
 
     &--diamond {
         &:after {
@@ -33,7 +35,7 @@ $diamond: (o o x o o)
             left: -$icon-size-var;
             width: $icon-size-var;
             height: $icon-size-var;
-            box-shadow: pixelize($diamond);
+            box-shadow: pixelize($diamond, $icon-size-var);
         }
     }
 }
