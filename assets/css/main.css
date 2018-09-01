@@ -2,6 +2,9 @@
 /* Icon size */
 /* Pixel matrix we're using */
 .icons {
+  margin: 3em auto;
+  width: 100%;
+  text-align: center;
   list-style: none;
   padding: 0;
   margin: 30px;
@@ -15,13 +18,5 @@
   /*     left: -20px; */
   /*     box-shadow: 20px 20px 0 hotpink, 40px 40px 0 gainsboro, 60px 60px 0 hotpink */
   /* } */ }
-  .icons--diamond:after {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 10px;
-    height: 10px;
-    box-shadow: 10px 10px transparent,20px 10px transparent,30px 10px hotpink,40px 10px transparent,50px 10px transparent,10px 20px transparent,20px 20px hotpink,30px 20px transparent,40px 20px hotpink,50px 20px transparent,10px 30px hotpink,20px 30px transparent,30px 30px transparent,40px 30px transparent,50px 30px hotpink,10px 40px transparent,20px 40px hotpink,30px 40px transparent,40px 40px hotpink,50px 40px transparent,10px 50px transparent,20px 50px transparent,30px 50px hotpink,40px 50px transparent,50px 50px transparent; }
 
 /*# sourceMappingURL=main.css.map */

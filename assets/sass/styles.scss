@@ -1,16 +1,95 @@
 @import "functions.scss";
 
+@mixin style-item($matrix, $size) {
+    position: relative;
+    width: ($size * length(nth($matrix, 1)));
+    height: ($size * length($matrix));
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: ( -$size );
+        left: ( -$size );
+        width: $size;
+        height: $size;
+        box-shadow: pixelize($pixmap, $icon-size-var);
+    }
+}
+
 /* Icon size */
-$icon-size-var: 10px;
+$icon-size-var: 20px;
 
 /* Pixel matrix we're using */
-$diamond: (o o x o o)
-          (o x o x o)
-          (x o o o x)
-          (o x o x o)
-          (o o x o o);
+
+$pixel-art:(
+  mushroom: (
+    (o o o o o k k k k k k o o o o o)
+    (o o o k k r r r r w w k k o o o)
+    (o o k w w r r r r w w w w k o o)
+    (o k w w r r r r r r w w w w k o)
+    (o k w r r w w w w r r w w w k o)
+    (k r r r w w w w w w r r r r r k)
+    (k r r r w w w w w w r r w w r k)
+    (k w r r w w w w w w r w w w w k)
+    (k w w r r w w w w r r w w w w k)
+    (k w w r r r r r r r r r w w r k)
+    (k w r r k k k k k k k k r r r k)
+    (o k k k w w k w w k w w k k k o)
+    (o o k w w w k w w k w w w k o o)
+    (o o k w w w w w w w w w w k o o)
+    (o o o k w w w w w w w w k o o o)
+    (o o o o k k k k k k k k o o o o)
+  ),
+
+  mario: (
+    (o o o r r r r r r o o o o)
+    (o o r r r r r r r r r r o)
+    (o o t t t p p p k p o o o)
+    (o t p t p p p p k p p p o)
+    (o t p t t p p p p k p p p)
+    (o t t p p p p p k k k k o)
+    (o o o p p p p p p p p o o)
+    (o o r r b r r r r o o o o)
+    (o r r r b r r b r r r r o)
+    (r r r r b b b b r r r r o)
+    (p p r b y b b y b r p p o)
+    (p p p b b b b b b p p p o)
+    (p p b b b b b b b b p p o)
+    (o o b b b o o b b b o o o)
+    (o t t t o o o o t t t o o)
+    (t t t t o o o o t t t t o)
+  ),
+  star: (
+    (o o o o o o o k k o o o o o o o)
+    (o o o o o o k y y k o o o o o o)
+    (o o o o o o k y y k o o o o o o)
+    (o o o o o k y y y y k o o o o o)
+    (k k k k k k y y y y k k k k k k)
+    (k y y y y y y y y y y y y y y k)
+    (o k y y y y k y y k y y y y k o)
+    (o o k y y y k y y k y y y k o o)
+    (o o o k y y k y y k y y k o o o)
+    (o o o k y y y y y y y y k o o o)
+    (o o k y y y y y y y y y y k o o)
+    (o o k y y y y y y y y y y k o o)
+    (o k y y y y y k k y y y y y k o)
+    (o k y y y k k o o k k y y y k o)
+    (k y y k k o o o o o o k k y y k)
+    (k k k o o o o o o o o o o k k k)
+  ),
+  diamond: (
+    (o o x o o)
+    (o x o x o)
+    (x o o o x)
+    (o x o x o)
+    (o o x o o)
+  )
+);
 
 .icons {
+    margin: 3em auto;
+    width: 100%;
+    text-align: center;
     list-style: none;
     padding: 0;
     margin: 30px;
@@ -27,15 +106,9 @@ $diamond: (o o x o o)
     /*     box-shadow: 20px 20px 0 hotpink, 40px 40px 0 gainsboro, 60px 60px 0 hotpink */
     /* } */
 
-    &--diamond {
-        &:after {
-            content: '';
-            position: absolute;
-            top: -$icon-size-var;
-            left: -$icon-size-var;
-            width: $icon-size-var;
-            height: $icon-size-var;
-            box-shadow: pixelize($diamond, $icon-size-var);
+    @each $name, $pixmap in $pixel-art {
+        &--#{name} {
+
         }
     }
 }

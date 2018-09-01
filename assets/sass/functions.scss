@@ -4,6 +4,14 @@
     $shadows: '';
     $i: $l;                     /* Length of matrix line */
 
+    /* Color translation table */
+    $pixel-color-map: (
+        'r': #f00,
+        'w': #fff,
+        'k': #000,              /* k for key, from CMYK */
+        'o': transparent
+    );
+
     /* Go through all the rows in the list */
     @for $i from 1 through $l {
         $row: nth($matrix, $i); /* Single row */
@@ -11,15 +19,12 @@
         @for $j from 1 through $l {
             $item: nth($row, $j);
 
-            @if $item == 'x' {
-                $shadows: $shadows + ($j * $size) + ' ' + ($i * $size) + ' ' + $color;
+            /* Translate codes from matrix */
+            @if map-has-key($pixel-color-map, $item) {
+                $shadows: $shadows + ($j * $size) + ' ' + ($i * $size) + ' ' + map-get($pixel-color-map, $item);
             } @else {
-                $shadows: $shadows + ($j * $size) + ' ' + ($i * $size) + ' ' + transparent;
-            }
-            /* When you get to the end of the row, add a comma before the next block
-            of drop shadows */
-            @if not ($j == length($row) and $i == $l) {
-                $shadows: $shadows + ',';
+                /* Safeguard */
+                @warn 'There is no color specified in "$pixel-color-map" for "#{$item}"';
             }
         }
     }
